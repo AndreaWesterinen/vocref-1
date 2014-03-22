@@ -1,0 +1,14 @@
+Hackathon Instructions
+
+
+
+Includes:
+[] Starter Ontology (enough framework to hang parallel hackathon work on)
+[] Clear documented instructions for hackathon day
+-- how to use the version control, get local copy of repo, submit work for merge back into repository...
+
+-- how to add work batches as issues, take them by self assignment, etc.
+-- Coordination plan via Hangout on hackathon day
+[] Resources identified for review / characteristic extraction & representation
+[] listed & linked, or 
+[] if appropriate, uploaded.
