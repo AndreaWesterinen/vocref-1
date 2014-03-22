@@ -1,0 +1,52 @@
+<http://ontolog.cim3.net/file/work/OntologySummit2013/Hackathon-Clinics/HC-05_Ontology-of-OntologyEvaluation/owl/metrics_model>
+  a owl:Ontology;
+  owl:versionInfo "$Id$".
+
+@prefix : <http://ontolog.cim3.net/ontology/evaluation#> .
+
+:EvaluationMetric
+  a owl:Class.
+
+:QualitativeMetric
+  a owl:Class;
+  rdfs:subClassOf :EvaluationMetric.
+
+:QuantitativeMetric
+  a owl:Class;
+  rdfs:subClassOf :EvaluationMetric.
+
+# TODO:  QualitativeMetric and QuantitativeMetric should probably be subclasses of a more general Metric.  They're broader than :EvaluationMetric.  Identifying this would be a good test for evaluation tools.
+
+:OntologyCharacteristic
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :composedOf;
+      owl:allValuesFrom :OntologySubcharacteristic ].
+
+:OntologySubcharacteristic
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :measuredBy;
+      owl:allValuesFrom :EvaluationMetric ].
+
+:OntologyRequirement
+  a owl:Class.
+
+:QualityRequirement
+  a owl:Class;
+  rdfs:subClassOf :OntologyRequirement.
+
+# TODO:  Again, QualityRequirement should be a subclass of a more general Requirement.  We could define OntologyRequirement as a subclass of the union of QualityRequirement and other such subclasses, if desired.
+
+:composedOf
+  a owl:ObjectProperty.
+
+:measuredBy
+  a owl:ObjectProperty.
+
+
+
+
+

@@ -1,0 +1,81 @@
+<title>OWL 2 Ontology of Ontology Evaluation</title>
+<h1>OWL 2 Ontology of Ontology Evaluation</h1>
+
+<p>This directory contains an OWL 2 representation of the Ontology of
+Ontology Evaluation which is intended to be faithful to the conceptual
+drawings developed during the HC-05 hackathon.</p>
+
+<p>A <a href="http://www.w3.org/TR/turtle/">Turtle</a> file corresponds to each of the
+drawings.  <a href="evaluation.ttl">evaluation.ttl</a> imports all of
+the other files.</p>
+
+<p>These files were tested using Protege 4.2.0 (Build 295), available
+at <a href="http://protege.stanford.edu">protege.stanford.edu</a>.
+Each is self-contained (resulting in some duplicate class definitions,
+which isn't a problem).  All the files use the
+same <a href="http://ontolog.cim3.net/file/work/OntologySummit2013/Hackathon-Clinics/HC-05_Ontology-of-OntologyEvaluation/owl/evaluation">http://ontolog.cim3.net/file/work/OntologySummit2013/Hackathon-Clinics/HC-05_Ontology-of-OntologyEvaluation/owl/evaluation</a>
+namespace, which is resolvable modulo HTTP content negotiation.</p>
+
+<p>Below we discuss some of the decisions made andissues encountered
+in developing this OWL 2 representation.  Many are generally
+applicable to other representations.  Some of the files also
+contain <tt>TODO</tt> comments.</p>
+
+<h2>Associating Value Types with Properties</h2>
+
+<p>
+
+<p>We make heavy use of <tt>owl:allValuesFrom</tt> restrictions (OWL's
+version of FOL <tt>forall</tt>), which are essentially class-specific
+versions of <tt>rdfs:range</tt>.  Many of our properties are reused (a
+good thing), so <tt>rdfs:range</tt> is generally too restrictive.</p>
+
+<p>We should verify that such restrictions are appropriate, both
+within and potentially outside the ontology.  For instance, agents can
+potentially manage many things (ontology requirements, people,
+companies, etc.).  In some cases, it may be more appropriate to use
+the inverse of the property, e.g. an ontology requirement is managed
+by an agent.</p>
+
+<h2>Associating Multiple Value Types with Properties</h2>
+
+<p>In some cases, a class uses the same property (e.g. defines) with
+values of multiple types.  We generally model this using
+an <tt>owl:allValuesFrom</tt> restriction to an
+anonymous <tt>owl:unionOf</tt> class. The disadvantage of this
+approach is that <tt>owl:unionOf</tt> closes off its list of classes
+(e.g. additional value types can't be added elsewhere).  Again, we
+should ensure that such restrictions are appropriate, both within and
+potentially outside the ontology.  It may be necessary to merge lists
+or use less constrained restrictions.</p>
+
+<p><tt>owl:someValuesFrom</tt> restrictions (OWL's version of
+FOL <tt>exists</tt>) can be used to indicate that a property has some
+(but not necessarily all) values of a given type, but it also
+implies <tt>owl:minCardinality</tt> 1, which may not be
+appropriate in many cases.</p>
+
+<h2>Loosely Associating Properties with Classes</h2>
+
+<p>It's often useful (e.g. to human readers or GUIs) to indicate that
+a given property is relevant to a class even if we're not able to say
+anything more about it.</p>
+
+<p>A tautological <tt>owl:minQualifiedCardinality</tt> 0 restriction
+can be used to associate a property relating 2 classes without XXX.
+Qualified cardinality restrictions were added in OWL 2.</p>
+
+<p>Similarly, a tautological <tt>owl:minCardinality</tt> 0 statement can be used to associate a property with a class without specifying the type of its value.</p>
+
+<h2>Cardinalities</h2>
+
+<p>The conceptual diagrams do not specify cardinalities, so we don't
+otherwise specify them.  Cardinalities should presumably be specified,
+where appropriate, as the ontology is refined.</p>
+
+<h2>Ontology Characteristics</h2>
+
+TBD classes vs. instances.  punning.  restrictions.
+
+<hr/>
+<a href="http://ontolog.cim3.net/cgi-bin/wiki.pl?MikeDean">Mike Dean</a>, 1 April 2013

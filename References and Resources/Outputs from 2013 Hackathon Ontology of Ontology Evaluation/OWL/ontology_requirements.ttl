@@ -1,0 +1,119 @@
+<http://ontolog.cim3.net/file/work/OntologySummit2013/Hackathon-Clinics/HC-05_Ontology-of-OntologyEvaluation/owl/ontology_requirements>
+  a owl:Ontology;
+  owl:versionInfo "$Id$".
+
+@prefix : <http://ontolog.cim3.net/ontology/evaluation#> .
+
+:OntologyRequirement
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :usedToDevelop;
+      owl:allValuesFrom :Ontology ],
+    [ a owl:Restriction;
+      owl:onProperty :defines;
+      owl:allValuesFrom :OntologyUsage ].
+
+:IntrinsicOntologyRequirement
+  a owl:Class;
+  rdfs:subClassOf :OntologyRequirement.
+
+:ExtrinsicOntologyRequirement
+  a owl:Class;
+  rdfs:subClassOf :OntologyRequirement.
+
+:RelationalOntologyRequirement
+  a owl:Class;
+  rdfs:subClassOf :OntologyRequirement.
+
+:UseCase
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :defines;
+      owl:allValuesFrom :OntologyRequirement ],
+    [ a owl:Restriction;
+      owl:onProperty :consistsOf;
+      owl:allValuesFrom 
+        [ a owl:Class;
+          owl:unionOf (:Actor :Scenario) ] ].
+
+:Agent
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :manages;
+      owl:minQualifiedCardinality 0;
+      owl:onClass :OntologyRequirement ].
+
+# TODO:  might be better to instead define an Agent manager for each OntologyRequirement
+
+:Organization
+  a owl:Class;
+  rdfs:subClassOf
+    :Agent,
+    [ a owl:Restriction;
+      owl:onProperty :defines;
+      owl:allValuesFrom :Capability ].
+
+:StakeHolder
+  a owl:Class;
+  rdfs:subClassOf
+    :Agent,
+    [ a owl:Restriction;
+      owl:onProperty :defines;
+      owl:allValuesFrom :Capability ].
+
+:Capability
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :defines;
+      owl:allValuesFrom
+        [ a owl:Class;
+          owl:unionOf (:Scope :OntologyRequirement) ] ].
+
+:Scope
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :limits;
+      owl:allValuesFrom :OntologyRequirement ],
+    [ a owl:Restriction;
+      owl:onProperty :impacts;
+      owl:allValuesFrom :Domain ].
+
+:Domain
+  a owl:Class.
+
+:Ontology
+  a owl:Class.
+
+:Scenario
+  a owl:Class.
+
+:Actor
+  a owl:Class.
+
+:OntologyUsage
+  a owl:Class.
+
+:usedToDevelop
+  a owl:ObjectProperty.
+
+:defines
+  a owl:ObjectProperty.
+
+:consistsOf
+  a owl:ObjectProperty.
+
+:manages
+  a owl:ObjectProperty.
+
+:limits
+  a owl:ObjectProperty.
+
+:impacts
+  a owl:ObjectProperty.
+
+

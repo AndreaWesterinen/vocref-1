@@ -1,0 +1,140 @@
+<http://ontolog.cim3.net/file/work/OntologySummit2013/Hackathon-Clinics/HC-05_Ontology-of-OntologyEvaluation/owl/organizational_process_and_maturity_models>
+  a owl:Ontology;
+  owl:versionInfo "$Id$".
+
+@prefix : <http://ontolog.cim3.net/ontology/evaluation#> .
+
+:ROIExpectations
+  a owl:Class;
+  rdfs:label "Ontology Sponsor's general Return on Investment (ROI) expectations";
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :drives;
+      owl:allValuesFrom
+        [ a owl:Class;
+          owl:unionOf (:ConceptualOntologyRepresentation :OntologyCreationMethodology) ] ],
+    [ a owl:Restriction;
+      owl:onProperty :influences;
+      owl:allValuesFrom :Organization ],
+    [ a owl:Restriction;
+      owl:onProperty :requires;
+      owl:allValuesFrom :MaturityLevel ],
+    [ a owl:Restriction;
+      owl:onProperty :shapes;
+      owl:allValuesFrom :OntologyCharacteristic ].
+
+:Organization
+  rdfs:comment "which creates, deploys, tests, audits, etc. the ontology";
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :influences;
+      owl:allValuesFrom :ROIExpectations ].
+
+# TODO:  might be better to have influencedBy property on ROIExpectations
+
+:ConceptualOntologyRepresentation
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :requires;
+      owl:allValuesFrom :OntologyEvaluationTool ].
+
+:OntologyUsage
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :drives;
+      owl:allValuesFrom :UseCase ].
+
+:UseCase
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :influences;
+      owl:allValuesFrom :OntologyCreationMethodology ].
+
+:OntologyCreationMethodology
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :uses;
+      owl:allValuesFrom 
+        [ a owl:Class;
+          owl:unionOf (:EvaluationProcess :OntologyLanguage) ] ].
+
+:EvaluationProcess
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :uses;
+      owl:allValuesFrom 
+        [ a owl:Class;
+          owl:unionOf (:EvaluationMethod :EvaluationCriteria) ] ],
+    [ a owl:Restriction;
+      owl:onProperty :requires;
+      owl:allValuesFrom :EvaluationOutput ].
+
+:OntologyCharacteristic
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :shapes;
+      owl:allValuesFrom :OntologySpecification ],
+    [ a owl:Restriction;
+      owl:onProperty :boundsDomains;
+      owl:allValuesFrom :Scope ],
+    [ a owl:Restriction;
+      owl:onProperty :drives;
+      owl:allValuesFrom :OntologyLifecycleStage ].
+
+:OntologyEvaluationTool
+  a owl:Class.
+
+:EvaluationMethod
+  a owl:Class.
+
+:EvaluationCriteria
+  a owl:Class.
+
+:EvaluationOutput
+  a owl:Class.
+
+:OntologyLanguage
+  a owl:Class.
+
+:MaturityLevel
+  a owl:Class;
+  rdfs:label "Maturity Level in Level of Development";
+  rdfs:comment "in Conceptual and Logical Models".
+
+:OntologySpecification
+  a owl:Class;
+  rdfs:label "Specifications for Ontology".
+
+:Scope
+  a owl:Class.
+
+:OntologyLifecycleStage
+  a owl:Class.
+
+:drives
+  a owl:ObjectProperty.
+
+:requires
+  a owl:ObjectProperty.
+
+:influences
+  a owl:ObjectProperty.
+
+:uses
+  a owl:ObjectProperty.
+
+:requires
+  a owl:ObjectProperty.
+
+:shapes
+  a owl:ObjectProperty.
+
+:boundsDomains
+  a owl:ObjectProperty.
+

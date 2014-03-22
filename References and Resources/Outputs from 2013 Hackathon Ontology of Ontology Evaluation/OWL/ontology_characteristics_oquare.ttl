@@ -1,0 +1,186 @@
+<http://ontolog.cim3.net/file/work/OntologySummit2013/Hackathon-Clinics/HC-05_Ontology-of-OntologyEvaluation/owl/ontology_characteristics_oquare> a owl:Ontology;
+   owl:versionInfo "$Id$".
+
+@prefix : <http://ontolog.cim3.net/ontology/evaluation#> .
+
+# TODO:  Most of these characteristics should have characteristic-specific properties associated with them.  Even binary characteristics should probably have a boolean property given the open world assumption.
+
+:OntologyCharacteristic
+  a owl:Class.
+
+
+:TransferabilityCharacteristic
+  a owl:Class;
+  rdfs:subClassOf :OntologyCharacteristic.
+
+:Portability
+  a owl:Class;
+  rdfs:subClassOf :TransferabilityCharacteristic.
+
+:Adaptability
+  a owl:Class;
+  rdfs:subClassOf :TransferabilityCharacteristic.
+
+
+:FunctionalAdequacyCharacteristic
+  a owl:Class;
+  rdfs:subClassOf :OntologyCharacteristic.
+
+:ConsistentSearchAndQuery
+  a owl:Class;
+  rdfs:subClassOf :FunctionalAdequacyCharacteristic.
+
+:IndexingAndLinking
+  a owl:Class;
+  rdfs:subClassOf :FunctionalAdequacyCharacteristic.
+
+:ReferenceOntology
+  a owl:Class;
+  rdfs:subClassOf :FunctionalAdequacyCharacteristic.
+
+# TODO:  should this be a subclass of Ontology instead?
+
+:ControlledVocabulary
+  a owl:Class;
+  rdfs:subClassOf :FunctionalAdequacyCharacteristic.
+
+# TODO:  should this be a subclass of Ontology instead?
+
+:SchemaAndValueReconciliation
+  a owl:Class;
+  rdfs:subClassOf :FunctionalAdequacyCharacteristic.
+
+:Guidance
+  a owl:Class;
+  rdfs:subClassOf :FunctionalAdequacyCharacteristic.
+
+:Clustering
+  a owl:Class;
+  rdfs:subClassOf :FunctionalAdequacyCharacteristic.
+
+:Similarity
+  a owl:Class;
+  rdfs:subClassOf :FunctionalAdequacyCharacteristic.
+
+
+:ReliabilityCharacteristic
+  a owl:Class;
+  rdfs:subClassOf :OntologyCharacteristic.
+
+:Recoverability
+  a owl:Class;
+  rdfs:subClassOf :ReliabilityCharacteristic.
+
+:ErrorDetection
+  a owl:Class;
+  rdfs:subClassOf :ReliabilityCharacteristic.
+
+:Availability
+  a owl:Class;
+  rdfs:subClassOf :ReliabilityCharacteristic.
+
+
+:CompatibilityCharacteristic
+  a owl:Class;
+  rdfs:subClassOf :OntologyCharacteristic.
+
+:Interoperability
+  a owl:Class;
+  rdfs:subClassOf :CompatibilityCharacteristic.
+
+:Replaceability
+  a owl:Class;
+  rdfs:subClassOf :CompatibilityCharacteristic.
+
+
+:OperabilityCharacteristic
+  a owl:Class;
+  rdfs:subClassOf :OntologyCharacteristic.
+
+:Learnability
+  a owl:Class;
+  rdfs:subClassOf :OperabilityCharacteristic.
+
+:EaseOfUse
+  a owl:Class;
+  rdfs:subClassOf :OperabilityCharacteristic.
+
+:AppropriatenessRecognisability
+  a owl:Class;
+  rdfs:subClassOf :OperabilityCharacteristic.
+
+:Helpfulness
+  a owl:Class;
+  rdfs:subClassOf :OperabilityCharacteristic.
+
+
+:MaintainabilityCharacteristic
+  a owl:Class;
+  rdfs:subClassOf :OntologyCharacteristic.
+
+:Reusability
+  a owl:Class;
+  rdfs:subClassOf :MaintainabilityCharacteristic.
+
+:Modularity
+  a owl:Class;
+  rdfs:subClassOf :MaintainabilityCharacteristic.
+
+:Analysability
+  a owl:Class;
+  rdfs:subClassOf :MaintainabilityCharacteristic.
+
+:Changeability
+  a owl:Class;
+  rdfs:subClassOf :MaintainabilityCharacteristic.
+
+:ModificationStability
+  a owl:Class;
+  rdfs:subClassOf :MaintainabilityCharacteristic.
+
+:Testability
+  a owl:Class;
+  rdfs:subClassOf :MaintainabilityCharacteristic.
+
+
+:StructuralCharacteristic
+  a owl:Class;
+  rdfs:subClassOf :OntologyCharacteristic.
+
+:Formalisation
+  a owl:Class;
+  rdfs:subClassOf :StructuralCharacteristic.
+
+:Consistency
+  a owl:Class;
+  rdfs:subClassOf :StructuralCharacteristic.
+
+:Tangledness
+  a owl:Class;
+  rdfs:subClassOf :StructuralCharacteristic.
+
+:Redundancy
+  a owl:Class;
+  rdfs:subClassOf :StructuralCharacteristic.
+
+:FormalRelationsSuport
+  a owl:Class;
+  rdfs:subClassOf :StructuralCharacteristic.
+
+:StructuralAccuracy
+  a owl:Class;
+  rdfs:subClassOf :StructuralCharacteristic.
+
+
+:PerformanceEfficiencyCharacteristic
+  a owl:Class;
+  rdfs:subClassOf :OntologyCharacteristic.
+
+:ResponseTime
+  a owl:Class;
+  rdfs:label "Responce in time";
+  rdfs:subClassOf :PerformanceEfficiencyCharacteristic.
+
+:ResourceUtilization
+  a owl:Class;
+  rdfs:subClassOf :PerformanceEfficiencyCharacteristic.

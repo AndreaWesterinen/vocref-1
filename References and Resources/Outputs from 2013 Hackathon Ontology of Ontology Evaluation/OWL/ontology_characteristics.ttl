@@ -1,0 +1,105 @@
+<http://ontolog.cim3.net/file/work/OntologySummit2013/Hackathon-Clinics/HC-05_Ontology-of-OntologyEvaluation/owl/ontology_characteristics>
+  a owl:Ontology;
+  owl:versionInfo "$Id$".
+
+@prefix : <http://ontolog.cim3.net/ontology/evaluation#> .
+
+:OntologyCharacteristic
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :selectsASubsetOf;
+      owl:allValuesFrom :EvaluationCriteria ],
+    [ a owl:Restriction;
+      owl:onProperty :tbd;
+      owl:allValuesFrom :StructuralCharacteristic ].
+
+# TODO:  Can selectsASubsetOf just be multiple select statements?
+
+# TODO:  What (if anything) to do about partiallyDefinedBy OMV?   owl:import?
+
+:StructuralCharacteristic
+  a owl:Class.
+
+# TODO:  most instances below are defined as classes in ontology_characteristics_oquare.ttl
+
+:Consistency a :StructuralCharacteristic.
+
+:Tangledness a :StructuralCharacteristic.
+
+:Redundancy a :StructuralCharacteristic.
+
+:Cohesion a :StructuralCharacteristic.
+
+:FormalRelationsSupport a :StructuralCharacteristic.
+
+:Formalization a :StructuralCharacteristic.
+
+:Ontology
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :hasCharacteristic;
+      owl:allValuesFrom :OntologyCharacteristic ].
+
+:EvaluationMetric
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :providesVisibilityTo;
+      owl:allValuesFrom :OntologyCharacteristic ].
+
+:EvaluationCriteria
+  a owl:Class.
+
+:OntologyRequirement
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :hierarchicallyConnectedWithin;
+      owl:allValuesFrom
+        [ a owl:Class;
+          owl:unionOf (:OntologyCharacteristic :OntologySpecification) ] ].
+
+:OntologySpecification
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :hierarchicallyConnectedWithin;
+      owl:allValuesFrom :OntologyCharacteristic ] .
+
+:CharacteristicQuery
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :generatedByTool;
+      owl:allValuesFrom :OntologyCharacteristic ].
+
+# TODO:  seems like the value for generatedByTool should be a Tool
+
+:CharacteristicTest
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :generatedByTool;
+      owl:allValuesFrom :OntologyCharacteristic ].
+
+# TODO:  seems like the value for generatedByTool should be a Tool
+
+:hasCharacteristic
+  a owl:ObjectProperty.
+
+:providesVisibilityTo
+  a owl:ObjectProperty.
+
+:selectsASubsetOf 
+  a owl:ObjectProperty.
+
+:tbd
+  a owl:ObjectProperty.
+
+:hierarchicallyConnectedWithin
+  a owl:ObjectProperty.
+
+:generatedByTool
+  a owl:ObjectProperty.

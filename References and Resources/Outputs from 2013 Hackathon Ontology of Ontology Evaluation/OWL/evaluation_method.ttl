@@ -1,0 +1,20 @@
+<http://ontolog.cim3.net/file/work/OntologySummit2013/Hackathon-Clinics/HC-05_Ontology-of-OntologyEvaluation/evaluation_method>
+  a owl:Ontology;
+  owl:versionInfo "$Id$".
+
+@prefix : <http://ontolog.cim3.net/ontology/evaluation#> .
+
+:EvaluationMethod
+  a owl:Class.
+
+:ManualEvaluationMethod
+  a owl:Class; 
+  rdfs:subClassOf :EvaluationMethod.
+
+:AutomatedEvaluationMethod
+  a owl:Class;
+  rdfs:subClassOf :EvaluationMethod.
+
+:SemiAutomatedEvaluationMethod
+  a owl:Class;
+  rdfs:subClassOf :EvaluationMethod.

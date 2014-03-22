@@ -1,0 +1,95 @@
+<http://ontolog.cim3.net/file/work/OntologySummit2013/Hackathon-Clinics/HC-05_Ontology-of-OntologyEvaluation/owl/ontology>
+  a owl:Ontology;
+  owl:versionInfo "$Id$".
+
+@prefix : <http://ontolog.cim3.net/ontology/evaluation#> .
+
+:Ontology
+  a owl:Class;
+  rdfs:comment "An ontology is a living artifact that is born inside an organizational context, has a life-cycle and is interacted with by various agents.  Examples of ontologies are the Gene Ontology or OWL Time, which may have multiple representations and/or versions.";
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :manifestedBy;
+      owl:allValuesFrom :OntologyRepresentation ],
+    [ a owl:Restriction;
+      owl:onProperty :hasCharacteristic;
+      owl:minCardinality 0 ].
+
+:OntologyRepresentation
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :hasCharacteristic;
+      owl:minCardinality 0 ].
+
+:FormalOntology
+  a owl:Class.
+
+:ConceptualOntologyRepresentation
+  a owl:Class;
+  rdfs:label "ontology (conceptual model)";
+  rdfs:comment "A human-centric, human-understandable model of the things and relationships in a portion of the world, expressed independently of technological implementation or machine use considerations. May be textual, graphical, or captured in any other human-friendly way.";
+  rdfs:subClassOf :OntologyRepresentation.
+
+:LogicalOntologyRepresentation
+  a owl:Class;
+  rdfs:label "ontology (logical model)";
+  rdfs:comment "A representation of an ontology in a particular, logic-based ontology language, such as OWL 2, Common Logic, etc.";
+  rdfs:subClassOf :OntologyRepresentation, :FormalOntology.
+
+:PhysicalOntologyRepresentation
+  a owl:Class;
+  rdfs:label "ontology (physical model)";
+  rdfs:comment "A serialized representation of an LogicalOntologyRepresentation (e.g., in RDF/XML or CLIF)";
+  rdfs:subClassOf :OntologyRepresentation, :FormalOntology.
+
+:hasCharacteristic
+  a owl:ObjectProperty.
+
+# definition that should have been included from High Level Concept Model
+
+:OntologyLanguage
+  a owl:Class;
+  rdfs:comment "Language used to represent an ontology, e.g. OWL, Common Logic, etc. An ontology characteristic.".
+
+# suggested additional definitions
+
+:OWL2 a :OntologyLanguage.
+:CommonLogic a :OntologyLanguage.
+:RDFS a :OntologyLanguage;
+  rdfs:label "RDF Schema".
+
+:LogicalOntologyRepresentation
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :implements;
+      owl:allValuesFrom :ConceptualOntologyRepresentation ].
+
+:PhysicalOntologyRepresentation
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :implements;
+      owl:allValuesFrom :LogicalOntologyRepresentation ].
+
+:OntologySerializationFormat
+  a owl:Class;
+  rdfs:comment "Format used to serialize a physical ontology, e.g. RDF/XML or CLIF. An ontology characteristic.".
+
+:RDF_XML a :OntologySerializationFormat.
+
+:OWL_XML a :OntologySerializationFormat.
+
+:Turtle a :OntologySerializationFormat;
+  rdfs:comment "Terse RDF Triple Language".
+    
+:CLIF a :OntologySerializationFormat;
+  rdfs:comment "Common Logic Interchange Format".
+
+:XCL a :OntologySerializationFormat;
+  rdfs:comment "XML representation for Common Logic".
+
+# TODO:  reflect :OntologyLanguage as :hasCharacteristic of :LogicalOntologyRepresentation
+
+# TODO:  reflect :OntologySerializationFormat as :hasCharacteristic of :PhysicalOntologyRepresentation
+
+# TODO:  link ontology serialization formats to their respective ontology languages?

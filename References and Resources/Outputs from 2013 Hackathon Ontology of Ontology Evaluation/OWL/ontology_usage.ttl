@@ -1,0 +1,81 @@
+<http://ontolog.cim3.net/file/work/OntologySummit2013/Hackathon-Clinics/HC-05_Ontology-of-OntologyEvaluation/owl/ontology_usage>
+  a owl:Ontology;
+  owl:versionInfo "$Id$".
+
+@prefix : <http://ontolog.cim3.net/ontology/evaluation#> .
+
+:OntologyUsage
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :uses;
+      owl:allValuesFrom :Ontology ],
+    [ a owl:Restriction;
+      owl:onProperty :determinesSome;
+      owl:allValuesFrom :OntologyRequirement ],
+    [ a owl:Restriction;
+      owl:onProperty :componentOf;
+      owl:allValuesFrom :System ],
+    [ a owl:Restriction;
+      owl:onProperty :delivers;
+      owl:allValuesFrom :Functionality ],
+    [ a owl:Restriction;
+      owl:onProperty :supports;
+      owl:allValuesFrom :Activity ];
+  a :ApplicationType.
+
+:Ontology
+  a owl:Class.
+
+:OntologyRequirement
+  a owl:Class.
+
+:System
+  a owl:Class.
+
+:Functionality
+  a owl:Class.
+
+:Activity
+  a owl:Class;
+  rdfs:comment "Business Process, etc.".
+
+:Architecture
+  a owl:Class.
+
+:ApplicationType
+  a owl:Class.
+
+:Agent
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :user;
+      owl:allValuesFrom :OntologyUsage ],
+    [ a owl:Restriction;
+      owl:onProperty :hasInterestIn;
+      owl:allValuesFrom :OntologyUsage ].
+
+:uses
+  a owl:ObjectProperty.
+
+:determinesSome
+  a owl:ObjectProperty.
+
+:componentOf
+  a owl:ObjectProperty.
+
+:delivers
+  a owl:ObjectProperty.
+
+:supports
+  a owl:ObjectProperty.
+
+:user
+  a owl:ObjectProperty.
+
+:hasInterestIn
+  a owl:ObjectProperty.
+
+
+    

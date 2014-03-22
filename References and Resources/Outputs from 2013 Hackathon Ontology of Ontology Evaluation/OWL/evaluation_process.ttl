@@ -1,0 +1,196 @@
+<http://ontolog.cim3.net/file/work/OntologySummit2013/Hackathon-Clinics/HC-05_Ontology-of-OntologyEvaluation/owl/evaluation_process>
+  a owl:Ontology;
+  owl:versionInfo "$Id$".
+
+@prefix : <http://ontolog.cim3.net/ontology/evaluation#> .
+
+# left subgraph
+
+:EvaluationProcess
+  a owl:Class.
+
+:BestPractice
+  a owl:Class;
+  rdfs:subClassOf
+    :EvaluationProcess,
+    [ a owl:Restriction;
+      owl:onProperty :appliesTo;
+      owl:allValuesFrom :OntologyLifecycleStage ].
+
+:Audit
+  a owl:Class;
+  rdfs:subClassOf
+    :EvaluationProcess,
+    [ a owl:Restriction;
+      owl:onProperty :appliesTo;
+      owl:allValuesFrom :OntologyLifecycleStage ].
+
+:IntrinsicAudit
+  a owl:Class;
+  rdfs:subClassOf :Audit.
+
+:ExtrinsicAudit
+  a owl:Class;
+  rdfs:subClassOf :Audit.
+
+:CombinationAudit
+  a owl:Class;
+  rdfs:subClassOf :Audit.
+
+:Ontology
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :activeIn;
+      owl:allValuesFrom :OperationalEnvironment ],
+    [ a owl:Restriction;
+      owl:onProperty :builtUsing;
+      owl:allValuesFrom :OntologyCreationMethodology ].
+
+:OperationalEnvironment
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :tbd;
+      owl:allValuesFrom :OntologyLifecycleStage ].
+
+:OntologyCreationMethodology
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :tbd;
+      owl:allValuesFrom :OntologyLifecycleStage ].
+
+:OntologyLifecycleStage
+  a owl:Class.
+
+:appliesTo
+  a owl:ObjectProperty.
+
+:activeIn
+  a owl:ObjectProperty.
+
+:builtUsing
+  a owl:ObjectProperty.
+
+:tbd
+  a owl:ObjectProperty.
+
+
+# upper right subgraph
+
+:Organization
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :evaluates;
+      owl:allValuesFrom 
+        [ a owl:Class;
+          owl:unionOf (:Ontology :EvaluationProcess) ]],
+    [ a owl:Restriction;
+      owl:onProperty :invokes;
+      owl:allValuesFrom :EvaluationProcess ],
+    [ a owl:Restriction;
+      owl:onProperty :defines;
+      owl:allValuesFrom :EvaluationCriteria ].
+
+:EvaluationEvent
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :processPartOf;
+      owl:allValuesFrom :EvaluationProcess ],
+    [ a owl:Restriction;
+      owl:onProperty :generates;
+      owl:allValuesFrom :EvaluationOutput ],
+    [ a owl:Restriction;
+      owl:onProperty :utilizes;
+      owl:allValuesFrom :EvaluationMethod ].
+
+:EvaluationMethod
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :implements;
+      owl:allValuesFrom :EvaluationMetric ],
+    [ a owl:Restriction;
+      owl:onProperty :utilizes;
+      owl:allValuesFrom :OntologyEvaluationTool ].
+
+:EvaluationMetric
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :measures;
+      owl:allValuesFrom :EvaluationCriteria ].
+
+:EvaluationOutput
+  a owl:Class.
+
+:OntologyEvaluationTool
+  a owl:Class.
+
+:EvaluationCriteria
+  a owl:Class.
+
+:defines
+  a owl:ObjectProperty.
+
+:evaluates
+  a owl:ObjectProperty.
+
+:invokes
+  a owl:ObjectProperty.
+
+:processPartOf
+  a owl:ObjectProperty.
+
+:generates
+  a owl:ObjectProperty.
+
+:utilizes
+  a owl:ObjectProperty.
+
+:implements
+  a owl:ObjectProperty.
+
+:measures
+  a owl:ObjectProperty.
+
+
+# lower right subgraph
+
+:Ontology
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :intendedFor;
+      owl:allValuesFrom :OntologyUsage ],
+    [ a owl:Restriction;
+      owl:onProperty :exhibits;
+      owl:allValuesFrom :OntologyCharacteristic ].
+
+:OntologyUsage
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :tbd;
+      owl:allValuesFrom :OntologyCharacteristic ].
+
+:EvaluationMethod
+  a owl:Class;
+  rdfs:subClassOf
+    [ a owl:Restriction;
+      owl:onProperty :appropriateFor;
+      owl:allValuesFrom :OntologyCharacteristic ].
+
+:OntologyCharacteristic
+  a owl:Class.
+
+:intendedFor
+  a owl:ObjectProperty.
+
+:appropriateFor
+  a owl:ObjectProperty.
+
+:exhibits
+  a owl:ObjectProperty.

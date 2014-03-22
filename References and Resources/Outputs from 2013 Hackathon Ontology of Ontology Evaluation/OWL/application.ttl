@@ -1,0 +1,12 @@
+<http://ontolog.cim3.net/file/work/OntologySummit2013/Hackathon-Clinics/HC-05_Ontology-of-OntologyEvaluation/owl/application>
+  a owl:Ontology;
+  owl:versionInfo "$Id$".
+
+@prefix : <http://ontolog.cim3.net/ontology/evaluation#> .
+
+:Application
+  a owl:Class.
+
+:System
+  a owl:Class;
+  rdfs:subClassOf :Application.
