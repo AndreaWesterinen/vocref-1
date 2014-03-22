@@ -24,6 +24,7 @@ VOAF is very handy for noting relationships between vocabularies or vocabulary e
 
 
 * The Ontology Metadata Vocabulary (OMV) http://omv2.sourceforge.net/
+	* OMV is used as the core metadata ontology by the Open Ontology Repository project. 
 	* "OMV is a metadata model for ontologies and related entities. It captures the key aspects of the ontology metadata information e.g., provenance, availability, statistics. OMV was designed modularly and it is implemented in OWL."
 	
 
@@ -39,13 +40,20 @@ Of course, the optional version identifier and the optional resource locator can
 	"ADMS is a profile of DCAT, used to describe semantic assets (or just 'Assets'), defined as highly reusable metadata (e.g. xml schemata, generic data models) and reference data (e.g. code lists, taxonomies, dictionaries, vocabularies) that are used for eGovernment system development."
 	"ADMS, the Asset Description Metadata Schema, is a profile of DCAT [ DCAT ] for describing so-called Semantic Assets (or just 'Assets'), that is, highly reusable metadata (e.g. xml schemata, generic data models) and reference data (e.g. code lists, taxonomies, dictionaries, vocabularies) that are used for eGovernment system development [ TOGD ]. Someone searching for an Asset is likely to have different needs, priorities and expectations than someone searching for a dataset in a data catalog and these differences are reflected in ADMS. In particular, users seeking an Asset are likely to be searching for a document — something they can open and read using familiar desktop software, as opposed to something that needs to be processed. Of course this is a very broad generalization. If a code list is published as a SKOS Concept scheme then it is both an Asset and a dataset and it can be argued that all Assets are datasets. Therefore the difference in user expectation is at the heart of what distinguishes ADMS as a profile of DCAT. A further distinction between DCAT and ADMS can be made in that DCAT is designed to facilitate interoperability between data catalogs , i.e. the catalog itself is at the heart of the vocabulary. ADMS is focused on the assets within a catalog."
 
+* Schema.org Creative work concepts: http://schema.org/CreativeWork
+	There are some potentially useful concepts here that get at some of the harder-to-characterize aspects of an ontology, such as its subject. This area of schema has had substantial input from people with subject categorization training and experience. The documentation of some of these concepts includes links to sources of further specification (such as possible values)
+	
+* Description of a project (DOAP): https://github.com/edumbill/doap/wiki
+	"DOAP is a project to create an XML/RDF vocabulary to describe software projects, and in particular open source projects.In addition to developing an RDF schema and examples, the DOAP project aims to provide tool support in all the popular programming languages.
 
-
-* Characterization of OpenOntologyRepository (OOR) entries: http://oor.net 
+* Characterization of OpenOntologyRepository (OOR) entries: http://oor.net or http://ontolog.cim3.net/cgi-bin/wiki.pl?OpenOntologyRepository
 
 
 * Characterization of Ontohub entries 
+http://wiki.ontohub.org/index.php/Metadata
 	
+* Characterization of colore entries: 
+	* Colore home: https://code.google.com/p/colore/
 
 
 
