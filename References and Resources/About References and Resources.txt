@@ -1,1 +1,57 @@
-About references and resources.
+About references and resources
+
+The following sources all provide some definition/explanation of some ontology characterization, often in the context of discussion of metrics, evaluation, or some particular notion of quality. We will review as many as possible and represent their relationship (e.g., equivalence, subsumption, or other) to characteristics we represent generally. We won't try to extract other aspects of the models presented (e.g., of evaluation, requirements...) during this hackathon, but will focus on ontology/vocabulary characteristics only. 
+
+
+
+
+* Vocabulary of a Friend (VOAF) is the primary vocabulary used to describe vocabularies in Linked Open Vocabularies (LOV). Description: http://lov.okfn.org/dataset/lov/about/ .  Vocabularies: http://lov.okfn.org/dataset/lov/ .  LOV is a very useful collection of several hundred vocabularies listed and individually described by metadata, classified by vocabulary spaces, interlinked using the dedicated vocabulary VOAF. LOV is queriable at vocabulary level or at element level and includes some data about the use of those vocabularies in the Semantic Web.
+	
+VOAF is very handy for noting relationships between vocabularies or vocabulary elements. We may do a good bit of reliance and borrowing for VOCREF that is better represented by VOAF terms than by SKOS terms, so this is a good resource for us to familiarize ourselves with.  http://lov.okfn.org/vocab/voaf/v2.3/index.html VOAF itself makes use of Dublin Core and VOID. 
+
+
+* Dublin Core Metadata Initiative Metadata Terms (DCMI Terms) http://dublincore.org/documents/dcmi-terms/  "metadata terms maintained by the Dublin Core Metadata Initiative, including properties, vocabulary encoding schemes, syntax encoding schemes, and classes."
+
+
+* Vocabulary of Interlinked Datasets (VOID), maintained by DERI http://vocab.deri.ie/void .  "The Vocabulary of Interlinked Datasets (VoID) is an RDF Schema vocabulary for expressing metadata about RDF datasets. It is intended as a bridge between the publishers and users of RDF data, with applications ranging from data discovery to cataloging and archiving of datasets. This document provides a formal definition of the new RDF classes and properties introduced for VoID. It is a companion to the main specification document for VoID, Describing Linked Datasets with the VoID Vocabulary."
+
+
+* SKOS 
+	* SKOS Simple Knowledge Organization System Primer  http://www.w3.org/TR/skos-primer/
+	* SKOS Simple Knowledge Organization System 
+	Referencehttp://www.w3.org/TR/skos-reference/
+	* SKOS Use Cases and Requirements http://www.w3.org/TR/skos-ucr/
+
+
+* The Ontology Metadata Vocabulary (OMV) http://omv2.sourceforge.net/
+	* "OMV is a metadata model for ontologies and related entities. It captures the key aspects of the ontology metadata information e.g., provenance, availability, statistics. OMV was designed modularly and it is implemented in OWL."
+	
+
+Of course, the optional version identifier and the optional resource locator can be combined, such that we end up with a tripartite identifier (URI, version, resource locator).
+
+* PROV-O: The PROV Ontology (PROV-O)  http://www.w3.org/TR/2013/REC-prov-o-20130430/
+"The PROV Ontology (PROV-O) ... provides a set of classes, properties, and restrictions that can be used to represent and interchange provenance information generated in different systems and under different contexts. It can also be specialized to create new classes and properties to model provenance information for different applications and domains. The PROV Document Overview [http://www.w3.org/TR/2012/WD-prov-overview-20121211/] describes the overall state of PROV, and should be read before other PROV documents."
+
+
+* ICOM
+
+* Asset Description Metadata Schema (ADMS) http://www.w3.org/TR/vocab-adms/
+	"ADMS is a profile of DCAT, used to describe semantic assets (or just 'Assets'), defined as highly reusable metadata (e.g. xml schemata, generic data models) and reference data (e.g. code lists, taxonomies, dictionaries, vocabularies) that are used for eGovernment system development."
+	"ADMS, the Asset Description Metadata Schema, is a profile of DCAT [ DCAT ] for describing so-called Semantic Assets (or just 'Assets'), that is, highly reusable metadata (e.g. xml schemata, generic data models) and reference data (e.g. code lists, taxonomies, dictionaries, vocabularies) that are used for eGovernment system development [ TOGD ]. Someone searching for an Asset is likely to have different needs, priorities and expectations than someone searching for a dataset in a data catalog and these differences are reflected in ADMS. In particular, users seeking an Asset are likely to be searching for a document — something they can open and read using familiar desktop software, as opposed to something that needs to be processed. Of course this is a very broad generalization. If a code list is published as a SKOS Concept scheme then it is both an Asset and a dataset and it can be argued that all Assets are datasets. Therefore the difference in user expectation is at the heart of what distinguishes ADMS as a profile of DCAT. A further distinction between DCAT and ADMS can be made in that DCAT is designed to facilitate interoperability between data catalogs , i.e. the catalog itself is at the heart of the vocabulary. ADMS is focused on the assets within a catalog."
+
+
+
+* Characterization of OpenOntologyRepository (OOR) entries: http://oor.net 
+
+
+* Characterization of Ontohub entries 
+	
+
+
+
+
+
+
+And of course 
+
+* Work done by last year's "Ontology of Ontology Evaluation" Hackathon group. '''[To be broken down more specifically]''' 
