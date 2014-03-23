@@ -1,9 +1,25 @@
 About references and resources
 
+Papers and Specs
+
+In the directory References and Resources > Papers and Specs are a sampling of documents providing or describing systems for ontology evaluation. Each of these provides a more or less explicit listing of ontology characteristics for evaluation. 
+
+There is less overlap than one might expect; while some expressions recur ("usability" or "accuracy," for example), discussion generally reveals that the underlying concepts are different, at least at the measurable / evaluable level. 
+
+It is a goal of this VOCREF project to develop a vocabulary sufficient for expressing the ontology characteristics listed and described in these documents.
+
+In particular, some of these documents describe evaluation methods that have some implemented tools and/or user base. The ontology characteristics described in such documents should be given higher priority than those which may be more speculative. Insofar as there is more likely to be evaluation data based on these in-use characteristics, their coverage in VOCREF is most likely to be useful, or at least to have its usefulness put to the test. 
+
+
+
+
+
+
+
+
+External Ontologies for potential import (or other reuse)
+
 The following sources all provide some definition/explanation of some ontology characterization, often in the context of discussion of metrics, evaluation, or some particular notion of quality. We will review as many as possible and represent their relationship (e.g., equivalence, subsumption, or other) to characteristics we represent generally. We won't try to extract other aspects of the models presented (e.g., of evaluation, requirements...) during this hackathon, but will focus on ontology/vocabulary characteristics only. 
-
-
-
 
 * Vocabulary of a Friend (VOAF) is the primary vocabulary used to describe vocabularies in Linked Open Vocabularies (LOV). Description: http://lov.okfn.org/dataset/lov/about/ .  Vocabularies: http://lov.okfn.org/dataset/lov/ .  LOV is a very useful collection of several hundred vocabularies listed and individually described by metadata, classified by vocabulary spaces, interlinked using the dedicated vocabulary VOAF. LOV is queriable at vocabulary level or at element level and includes some data about the use of those vocabularies in the Semantic Web.
 	
