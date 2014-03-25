@@ -1,14 +1,44 @@
-Hackathon Instructions
+Hackathon Instructions  [this is currently a stub, subject to work in the week before the hackathon!]
+
+Primary Communication:
+* Google Hangout at: [...]
+* This GitHub repository, especially the "Issues" functions. Do not be afraid to create new issues or comment on existing ones!
+
+Roles: 
+    * Direct ontology development from gathered resources 
+    * Identification and documentation of competency questions for this ontology. What questions and answers should it 
+    support about particular ontologies and vocabularies? 
+    * Creation of examples in which the ontology developed so far is applied to one or more specific ontologies or     
+    vocabularies, to illustrate the use of the ontology and find coverage caps, reporting these as issues. 
+    * If you would like to contribute in another way not mentioned, please contact us!
+
+How to get set up to work on the repository content and add to it: 
+    - how to use the version control, get local copy of repo, submit work for merge back into repository...
 
 
 
-Includes:
-[] Starter Ontology (enough framework to hang parallel hackathon work on)
-[] Clear documented instructions for hackathon day
--- how to use the version control, get local copy of repo, submit work for merge back into repository...
 
--- how to add work batches as issues, take them by self assignment, etc.
--- Coordination plan via Hangout on hackathon day
-[] Resources identified for review / characteristic extraction & representation
-[] listed & linked, or 
-[] if appropriate, uploaded.
+How to keep work coordinated within the GitHub repository 
+    1. When you identify a batch of work that you want to work on, open an issue for it. The issue title should give the
+    essense of what you're doing. The description should give more detail, including what resources your working with
+    and where you will put your results. 
+    2. Label that Issue as an enhancement, and select one of the other labels that characterizes what kind of work it is
+    (OWL, documentation...,?). We can make new labels if we want them.
+    3. Assign that Issue to yourself.
+
+        Example: Say you want to work on extracting & representing the characteristics from Guarino & Welty 2009.
+        First, you open a new issue. Title it something like "Add represenation of characteristics from Guarino & Welty
+        2009." In the description, say a bit more, making clear what you are going to add and where, e.g., "Identify
+        ontology characteristics discussed in Guarino & Welty 2009 and add OWL represenation of them in a separate
+        ontology module." From the labels pull-down, choose "enhancement" and "OWL". From the Assignee pull-down, 
+        choose yourself. Save/publish the issue. 
+        
+    4. When you complete a task, commit the work to your fork. Then open an new pull request. State what the content
+    that you are providing. Find the number of the issue in which you first identified and assigned yourself that 
+    work. Refer to that issue and state whether the work you've committed completes the work partially or completely 
+    (e.g., "This partially completes Issue #12" or "Completes Issue #8"). Submit the pull request. 
+    
+How does the ontology in /vocref-top relate to all the other ontologies?
+
+
+
