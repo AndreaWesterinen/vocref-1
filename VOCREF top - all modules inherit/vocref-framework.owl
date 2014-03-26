@@ -65,24 +65,6 @@
     
 
 
-    <!-- http://ontolog.cim3.net/ontology/evaluation#activeIn -->
-
-    <owl:ObjectProperty rdf:about="http://ontolog.cim3.net/ontology/evaluation#activeIn"/>
-    
-
-
-    <!-- http://ontolog.cim3.net/ontology/evaluation#appliesTo -->
-
-    <owl:ObjectProperty rdf:about="http://ontolog.cim3.net/ontology/evaluation#appliesTo"/>
-    
-
-
-    <!-- http://ontolog.cim3.net/ontology/evaluation#appropriateFor -->
-
-    <owl:ObjectProperty rdf:about="http://ontolog.cim3.net/ontology/evaluation#appropriateFor"/>
-    
-
-
     <!-- http://ontolog.cim3.net/ontology/evaluation#boundsDomains -->
 
     <owl:ObjectProperty rdf:about="http://ontolog.cim3.net/ontology/evaluation#boundsDomains"/>
@@ -161,12 +143,6 @@
     
 
 
-    <!-- http://ontolog.cim3.net/ontology/evaluation#hasCharacteristic -->
-
-    <owl:ObjectProperty rdf:about="http://ontolog.cim3.net/ontology/evaluation#hasCharacteristic"/>
-    
-
-
     <!-- http://ontolog.cim3.net/ontology/evaluation#hasInterestIn -->
 
     <owl:ObjectProperty rdf:about="http://ontolog.cim3.net/ontology/evaluation#hasInterestIn"/>
@@ -206,6 +182,12 @@
     <!-- http://ontolog.cim3.net/ontology/evaluation#intendedFor -->
 
     <owl:ObjectProperty rdf:about="http://ontolog.cim3.net/ontology/evaluation#intendedFor"/>
+    
+
+
+    <!-- http://ontolog.cim3.net/ontology/evaluation#intendedUse -->
+
+    <owl:ObjectProperty rdf:about="http://ontolog.cim3.net/ontology/evaluation#intendedUse"/>
     
 
 
@@ -311,6 +293,26 @@
     
 
 
+    <!-- http://ontolog.cim3.net/ontology/evaluation#voCharacterization -->
+
+    <owl:ObjectProperty rdf:about="http://ontolog.cim3.net/ontology/evaluation#voCharacterization">
+        <rdfs:label>vocharacterization</rdfs:label>
+        <rdfs:label xml:lang="en">vocabulary or ontology characterization</rdfs:label>
+        <rdfs:comment xml:lang="en">Relates a vocabulary or ontology to a characterization of one or more aspects or characteristics of that vocabulary or ontology.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ajv/ontologies/2014/3/Merged2013HC05OntoEval#VO"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ajv/ontologies/2014/3/vocref_framework#VOCharacterization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontolog.cim3.net/ontology/evaluation#voComponentOfSystem -->
+
+    <owl:ObjectProperty rdf:about="http://ontolog.cim3.net/ontology/evaluation#voComponentOfSystem">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ajv/ontologies/2014/3/Merged2013HC05OntoEval#VO"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ajv/ontologies/2014/3/Merged2013HC05OntoEval#expresses -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ajv/ontologies/2014/3/Merged2013HC05OntoEval#expresses"/>
@@ -349,13 +351,13 @@
     <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#Agent">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#hasInterestIn"/>
+                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#user"/>
                 <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#VOUsage"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#user"/>
+                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#hasInterestIn"/>
                 <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#VOUsage"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -460,12 +462,6 @@
     <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#ConceptualOntologyRepresentation">
         <rdfs:label>ontology (conceptual model)</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://ontolog.cim3.net/ontology/evaluation#OntologyRepresentation"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#requires"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#VOEvaluationTool"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>A human-centric, human-understandable model of the things and relationships in a portion of the world, expressed independently of technological implementation or machine use considerations. May be textual, graphical, or captured in any other human-friendly way.</rdfs:comment>
     </owl:Class>
     
@@ -528,14 +524,14 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#processPartOf"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#EvaluationProcess"/>
+                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#generates"/>
+                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#EvaluationOutput"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#generates"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#EvaluationOutput"/>
+                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#processPartOf"/>
+                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#EvaluationProcess"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -547,7 +543,7 @@
     <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#EvaluationMethod">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#appropriateFor"/>
+                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#intendedUse"/>
                 <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#VOCharacteristic"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -555,12 +551,6 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#implements"/>
                 <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#EvaluationMetric"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#utilizes"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#VOEvaluationTool"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -610,7 +600,7 @@
     <!-- http://ontolog.cim3.net/ontology/evaluation#FormalOntology -->
 
     <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#FormalOntology">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ajv/ontologies/2014/3/Merged2013HC05OntoEval#VO"/>
+        <rdfs:subClassOf rdf:resource="http://ontolog.cim3.net/ontology/evaluation#Ontology"/>
     </owl:Class>
     
 
@@ -754,48 +744,7 @@
     <!-- http://ontolog.cim3.net/ontology/evaluation#Ontology -->
 
     <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#Ontology">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#hasCharacteristic"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#VOCharacteristic"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#manifestedBy"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#OntologyRepresentation"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#intendedFor"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#VOUsage"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#exhibits"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#VOCharacteristic"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#builtUsing"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#VOCreationMethodology"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#activeIn"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#OperationalEnvironment"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#hasCharacteristic"/>
-                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ajv/ontologies/2014/3/Merged2013HC05OntoEval#VO"/>
         <rdfs:comment>An ontology is a living artifact that is born inside an organizational context, has a life-cycle and is interacted with by various agents.  Examples of ontologies are the Gene Ontology or OWL Time, which may have multiple representations and/or versions.</rdfs:comment>
     </owl:Class>
     
@@ -814,7 +763,7 @@
     <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#OntologyRepresentation">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#hasCharacteristic"/>
+                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#voCharacterization"/>
                 <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -868,23 +817,6 @@
 
     <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#PerformanceEfficiencyCharacteristic">
         <rdfs:subClassOf rdf:resource="http://ontolog.cim3.net/ontology/evaluation#VOCharacteristic"/>
-    </owl:Class>
-    
-
-
-    <!-- http://ontolog.cim3.net/ontology/evaluation#PhysicalOntologyRepresentation -->
-
-    <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#PhysicalOntologyRepresentation">
-        <rdfs:label>ontology (physical model)</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://ontolog.cim3.net/ontology/evaluation#FormalOntology"/>
-        <rdfs:subClassOf rdf:resource="http://ontolog.cim3.net/ontology/evaluation#OntologyRepresentation"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#implements"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#LogicalOntologyRepresentation"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>A serialized representation of an LogicalOntologyRepresentation (e.g., in RDF/XML or CLIF)</rdfs:comment>
     </owl:Class>
     
 
@@ -994,14 +926,7 @@
 
     <!-- http://ontolog.cim3.net/ontology/evaluation#Scope -->
 
-    <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#Scope">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#impacts"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#Domain"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
+    <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#Scope"/>
     
 
 
@@ -1017,6 +942,23 @@
 
     <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#SerializationFormat">
         <rdfs:comment>Format used to serialize a physical ontology, e.g. RDF/XML or CLIF. An ontology characteristic.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontolog.cim3.net/ontology/evaluation#SerializedOntologyRepresentation -->
+
+    <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#SerializedOntologyRepresentation">
+        <rdfs:label>formal ontology (serialized)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://ontolog.cim3.net/ontology/evaluation#FormalOntology"/>
+        <rdfs:subClassOf rdf:resource="http://ontolog.cim3.net/ontology/evaluation#OntologyRepresentation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#implements"/>
+                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#LogicalOntologyRepresentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A serialized representation of an ontology (that is, represented in a serial format such as RDF/XML or CLIF.</rdfs:comment>
     </owl:Class>
     
 
@@ -1041,14 +983,6 @@
 
     <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#StructuralCharacteristic">
         <rdfs:subClassOf rdf:resource="http://ontolog.cim3.net/ontology/evaluation#VOCharacteristic"/>
-    </owl:Class>
-    
-
-
-    <!-- http://ontolog.cim3.net/ontology/evaluation#System -->
-
-    <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#System">
-        <rdfs:subClassOf rdf:resource="http://ontolog.cim3.net/ontology/evaluation#Application"/>
     </owl:Class>
     
 
@@ -1079,14 +1013,7 @@
 
     <!-- http://ontolog.cim3.net/ontology/evaluation#UseCase -->
 
-    <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#UseCase">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#influences"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#VOCreationMethodology"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
+    <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#UseCase"/>
     
 
 
@@ -1095,20 +1022,8 @@
     <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#VOCharacteristic">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#composedOf"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#VOSubcharacteristic"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#tbd"/>
                 <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#StructuralCharacteristic"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#shapes"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#VOSpecification"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1121,66 +1036,19 @@
     
 
 
-    <!-- http://ontolog.cim3.net/ontology/evaluation#VOCreationMethodology -->
-
-    <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#VOCreationMethodology">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#uses"/>
-                <owl:allValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://ontolog.cim3.net/ontology/evaluation#EvaluationProcess"/>
-                            <rdf:Description rdf:about="http://ontolog.cim3.net/ontology/evaluation#OntologyLanguage"/>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:allValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://ontolog.cim3.net/ontology/evaluation#VOEvaluationTool -->
-
-    <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#VOEvaluationTool"/>
-    
-
-
-    <!-- http://ontolog.cim3.net/ontology/evaluation#VOSpecification -->
-
-    <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#VOSpecification">
-        <rdfs:label>Specifications for Ontology or Vocabuary</rdfs:label>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#hierarchicallyConnectedWithin"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#VOCharacteristic"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://ontolog.cim3.net/ontology/evaluation#VOSubcharacteristic -->
-
-    <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#VOSubcharacteristic">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#measuredBy"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#EvaluationMetric"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
     <!-- http://ontolog.cim3.net/ontology/evaluation#VOUsage -->
 
     <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#VOUsage">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#componentOf"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#System"/>
+                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#uses"/>
+                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#Ontology"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#delivers"/>
+                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#Functionality"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1191,20 +1059,8 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#uses"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#Ontology"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#drives"/>
                 <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#UseCase"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#delivers"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#Functionality"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1231,6 +1087,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/ajv/ontologies/2014/3/Merged2013HC05OntoEval#VOCharacterization-Atomic">
         <rdfs:label xml:lang="en">vocabulary or ontology characterization</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ajv/ontologies/2014/3/vocref_framework#VOCharacterization"/>
         <rdfs:comment xml:lang="en">A description of a single, atomic characteristic, feature, or property of a specific vocabulary or ontology.  Although the characteristic is atomic (not meaningully broken down into independent, component characteristics), its formal expression may require more than one assertion. In other words, the characteristic may be atomic, but the characterization may comprise multiple statements. These statements may depend on each other for their meaningfulness in relation to the vocabulary or ontology, as, for example, in represention of a measurement of perfomance, according to some specified metric, obtained by performing some operations, using the vocabulary or ontology along with some reasoner or other application.</rdfs:comment>
     </owl:Class>
     
@@ -1252,10 +1109,28 @@
     
 
 
+    <!-- http://www.semanticweb.org/ajv/ontologies/2014/3/vocref_framework#InformationSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ajv/ontologies/2014/3/vocref_framework#InformationSystem">
+        <rdfs:label xml:lang="en">infomation system</rdfs:label>
+        <rdfs:comment xml:lang="en">A complementary network of hardware, software, processes, people and/or organizations used to collect, filter, process, create, and distribute information.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/ajv/ontologies/2014/3/vocref_framework#Person -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ajv/ontologies/2014/3/vocref_framework#Person">
         <rdfs:subClassOf rdf:resource="http://ontolog.cim3.net/ontology/evaluation#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ajv/ontologies/2014/3/vocref_framework#Taxonomy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ajv/ontologies/2014/3/vocref_framework#Taxonomy">
+        <rdfs:label xml:lang="en">Taxonomy</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ajv/ontologies/2014/3/Merged2013HC05OntoEval#VO"/>
     </owl:Class>
     
 
@@ -1268,9 +1143,19 @@
     
 
 
+    <!-- http://www.semanticweb.org/ajv/ontologies/2014/3/vocref_framework#VOCharacterization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ajv/ontologies/2014/3/vocref_framework#VOCharacterization">
+        <rdfs:label xml:lang="en">VOCharacterization</rdfs:label>
+        <rdfs:comment xml:lang="en">A Characterization of some aspect or aspects of a vocabulary or ontology, whether atomic or compound.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/ajv/ontologies/2014/3/vocref_framework#VOCharacterization-Compound -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ajv/ontologies/2014/3/vocref_framework#VOCharacterization-Compound">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ajv/ontologies/2014/3/vocref_framework#VOCharacterization"/>
         <rdfs:comment xml:lang="en">A description of a specific vocabulary or ontology that includes multiple, independent characteristics, features, or properties of that vocabulary or ontology.  </rdfs:comment>
     </owl:Class>
     
