@@ -1,0 +1,49 @@
+About External Ontologies
+
+In theory, the OWL mechanism of importing ontologies for reuse seems fine.  In practice, people have found that importing ontologies is in some cases a great way to avoid duplication; in other cases, it causes small vocabularies to be weighed down by the bulk of many ontologies imported for the sake of just a few concepts. There are other options for reuse (such as creation of local duplicates, with their origin captured)
+
+In other words, the practical pros and cons of importing ontologies vs duplicating some content weigh differently in different situations and uses.
+
+For VOCREF, there are arguments to be made either way. A heavily-weighted factor is the desire to produce VOCREF as an ontology that can be used and interpreted easily by both humans and machines. For the humans, the presence of many extraneous, off-topic concepts due to importing can be very confusing and make vocabulary navigation difficult. This speaks for a duplicate-and-keep-provenance approach. 
+
+On the other hand, we also want VOCREF metadata to be easily produced from, or mapped to, concepts used in existing evaluation methods, repositories, etc.. This argues for semantically explicit representation of mappings, which in turn requires having the source vocabulary available to map to or from. 
+
+For now (keeping in mind that this approach is amenable to later refactoring, if reconsidered), the chosen approach for VOCREF involves:
+* a spindled architecture of ontologies, more on which below;
+* creation of concepts which duplicate certain external ones (with provenance annotations) in the main content ontologies
+* mapping ontologies which inherit both the main content ontologies and the external ones from which reuse has occurred, in which the mappings are made semantically explicit.
+
+This keeps the connections available in several forms and allows users (and developers) to use (any or all of) the lighter-weight main content ontologies alone, or to use the aligned results of the mapping ontologies, which are more complete and more suitable for many machine-reasoning and integration tasks.
+
+Here's a primitive picture of the basic spindle relationships:
+
+
+						VOCREF-top   	<Minimal content ontology, 
+						/  |  \		   <with core framework concepts
+					   /   |   \		<necessary for any vocref content
+	PROV-O			  /    |	\ 		<duplicate concepts as needed
+   (example only)	 /     |     \						
+		|		vocref1  vocref2  vocrefn	<additional vocref content
+		|	   /|		 /	|	  |	\		<ontologies, with duplicate
+		|	  /	|		/   |	  |	 \		<concepts as needed
+		|	 /	|	   /	|	  |	  \				 
+	mappings1	| mappings2	|     |  mappingsn	<mapping ontologies,  
+		|		|	|		|	  | 	|		<importing both content ontologies		
+		|		|	|		|	  | 	|		<and external ontologies, 
+		|		|	|		|	  | 	|		<containing mapping assertions
+		|		|	|		|	  | 	|						
+		|		------all_vocref---		|	<imports all vocref content 
+		|			|		|			|	<but no mappings		
+		|			|		|			|
+		|			|		|			|				
+		-----all_vocref_w mappings-------		<imports all_vocref and 
+												<all mappings ontologies
+
+
+
+
+
+
+
+
+

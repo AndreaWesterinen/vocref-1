@@ -1,5 +1,9 @@
 About references and resources
 
+The following sources all provide some definition/explanation of some ontology characterization, often in the context of discussion of metrics, evaluation, or some particular notion of quality. We will review as many as possible and represent their relationship (e.g., equivalence, subsumption, or other) to characteristics we represent generally. We won't try to extract other aspects of the models presented (e.g., of evaluation, requirements...) during this hackathon, but will focus on ontology/vocabulary characteristics only. 
+
+
+
 Papers and Specs
 
 In the directory References and Resources > Papers and Specs are a sampling of documents providing or describing systems for ontology evaluation. Each of these provides a more or less explicit listing of ontology characteristics for evaluation. 
@@ -13,13 +17,15 @@ In particular, some of these documents describe evaluation methods that have som
 
 
 
+External Ontologies for potential reuse
+
+Below are short descriptions of some of the vocabularies and ontologies or schemes that have been identified as having good potential content for reuse as part of VOCREF. Descriptions and/or ontology files have been saved to the "External Ontologies for potential reuse" subdirectory.
+
+Review of these for concepts to add to VOCREF is encouraged. Independently, it's likely that each of these has some concepts that map fairly well to some VOCREF concepts. Creating such mappings is a good thing and well worth the time. 
+
+For specific guidance on how and where to capture mappings and/or to reuse concepts, please read the document "About External Ontologies -- mappings - imports - duplicates.txt," in this directory.
 
 
-
-
-External Ontologies for potential import (or other reuse)
-
-The following sources all provide some definition/explanation of some ontology characterization, often in the context of discussion of metrics, evaluation, or some particular notion of quality. We will review as many as possible and represent their relationship (e.g., equivalence, subsumption, or other) to characteristics we represent generally. We won't try to extract other aspects of the models presented (e.g., of evaluation, requirements...) during this hackathon, but will focus on ontology/vocabulary characteristics only. 
 
 * Vocabulary of a Friend (VOAF) is the primary vocabulary used to describe vocabularies in Linked Open Vocabularies (LOV). Description: http://lov.okfn.org/dataset/lov/about/ .  Vocabularies: http://lov.okfn.org/dataset/lov/ .  LOV is a very useful collection of several hundred vocabularies listed and individually described by metadata, classified by vocabulary spaces, interlinked using the dedicated vocabulary VOAF. LOV is queriable at vocabulary level or at element level and includes some data about the use of those vocabularies in the Semantic Web.
 	
@@ -43,9 +49,6 @@ VOAF is very handy for noting relationships between vocabularies or vocabulary e
 	* OMV is used as the core metadata ontology by the Open Ontology Repository project. 
 	* "OMV is a metadata model for ontologies and related entities. It captures the key aspects of the ontology metadata information e.g., provenance, availability, statistics. OMV was designed modularly and it is implemented in OWL."
 	
-
-Of course, the optional version identifier and the optional resource locator can be combined, such that we end up with a tripartite identifier (URI, version, resource locator).
-
 * PROV-O: The PROV Ontology (PROV-O)  http://www.w3.org/TR/2013/REC-prov-o-20130430/
 "The PROV Ontology (PROV-O) ... provides a set of classes, properties, and restrictions that can be used to represent and interchange provenance information generated in different systems and under different contexts. It can also be specialized to create new classes and properties to model provenance information for different applications and domains. The PROV Document Overview [http://www.w3.org/TR/2012/WD-prov-overview-20121211/] describes the overall state of PROV, and should be read before other PROV documents."
 
