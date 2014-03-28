@@ -348,20 +348,7 @@
 
     <!-- http://ontolog.cim3.net/ontology/evaluation#Agent -->
 
-    <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#Agent">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#user"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#VOUsage"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#hasInterestIn"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#VOUsage"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
+    <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#Agent"/>
     
 
 
@@ -1030,43 +1017,6 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#boundsDomains"/>
                 <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#Scope"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://ontolog.cim3.net/ontology/evaluation#VOUsage -->
-
-    <owl:Class rdf:about="http://ontolog.cim3.net/ontology/evaluation#VOUsage">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#uses"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#Ontology"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#delivers"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#Functionality"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#tbd"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#VOCharacteristic"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#drives"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#UseCase"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontolog.cim3.net/ontology/evaluation#supports"/>
-                <owl:allValuesFrom rdf:resource="http://ontolog.cim3.net/ontology/evaluation#Activity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
