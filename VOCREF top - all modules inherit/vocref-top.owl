@@ -1,4 +1,4 @@
-Prefix(:=<http://ontolog.cim3.net/ontology/evaluation#>)
+Prefix(:=<http://vocref.github.io/ontologies/vocref-top#>)
 Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
 Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
 Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 Prefix(skos:=<http://www.w3.org/2004/02/skos/core#>)
 
 
-Ontology(<http://ontolog.cim3.net/ontology/evaluation>
-<http://ontolog.cim3.net/ontology/evaluation/2.0-SNAPSHOT>
+Ontology(<http://vocref.github.io/ontologies/vocref-top>
+<http://vocref.github.io/ontologies/vocref-top/1.0-SNAPSHOT>
 Annotation(owl:versionInfo "$Id$")
 Annotation(rdfs:label "Ontology of Ontology Evaluation")
 Annotation(rdfs:seeAlso <http://ontolog.cim3.net/cgi-bin/wiki.pl?OntologySummit2013_Hackathon_Clinics_OntologyOfOntologyEvaluation>)
@@ -169,8 +169,8 @@ SubClassOf(:SemiAutomatedEvaluationMethod :EvaluationMethod)
 Declaration(Class(:SerializationFormat))
 AnnotationAssertion(rdfs:comment :SerializationFormat "Format used to serialize a physical ontology, e.g. RDF/XML or CLIF. An ontology characteristic.")
 Declaration(Class(:SerializedOntologyRepresentation))
-AnnotationAssertion(rdfs:label :SerializedOntologyRepresentation "formal ontology (serialized)")
 AnnotationAssertion(rdfs:comment :SerializedOntologyRepresentation "A serialized representation of an ontology (that is, represented in a serial format such as RDF/XML or CLIF."@en)
+AnnotationAssertion(rdfs:label :SerializedOntologyRepresentation "formal ontology (serialized)")
 SubClassOf(:SerializedOntologyRepresentation :FormalOntology)
 SubClassOf(:SerializedOntologyRepresentation :OntologyRepresentation)
 SubClassOf(:SerializedOntologyRepresentation ObjectAllValuesFrom(:implements :LogicalOntologyRepresentation))
@@ -193,9 +193,9 @@ Declaration(Class(:TransferabilityCharacteristic))
 SubClassOf(:TransferabilityCharacteristic :VOCharacteristic)
 Declaration(Class(:UseCase))
 Declaration(Class(:VO))
-AnnotationAssertion(rdfs:comment :VO "Loosely, a structured semantic information object, such as a metadata vocabulary, formal ontology, or knowledge organization structure, incorporating a model of some things in the world and/or some terms or expression and relations between them. "@en)
 AnnotationAssertion(rdfs:label :VO "vocabulary or ontology"@en)
 AnnotationAssertion(skos:acronym :VO "VO"@en)
+AnnotationAssertion(rdfs:comment :VO "Loosely, a structured semantic information object, such as a metadata vocabulary, formal ontology, or knowledge organization structure, incorporating a model of some things in the world and/or some terms or expression and relations between them. "@en)
 Declaration(Class(:VOCharacteristic))
 SubClassOf(:VOCharacteristic ObjectAllValuesFrom(:boundsDomains :Scope))
 Declaration(Class(:VOCharacterization))
