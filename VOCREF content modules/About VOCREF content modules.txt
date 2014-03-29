@@ -1,0 +1,5 @@
+About VOCREF content modules and VOCREF modular structure
+
+These are content ontologies that inherit from vocref-top, but nothing else. 
+
+Mappings between these modules and external ontologies should be done in separate mapping ontologies that inherit both the module in question and the external ontologies needed. 

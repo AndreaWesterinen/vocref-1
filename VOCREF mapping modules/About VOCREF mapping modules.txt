@@ -1,0 +1,1 @@
+These are ontologies that inherit from some content ontology and some external ontologies, providing explicit mappings between duplicate concepts in vocref and the external ontologies to which they relate / from which they may be derived. 
