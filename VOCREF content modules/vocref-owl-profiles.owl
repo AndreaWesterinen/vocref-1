@@ -12,19 +12,11 @@ Ontology(<http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles>
 Import(<http://vocref.github.io/ontologies/vocref-top>)
 
 Declaration(Class(<http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#OWLFamilyOntologyLanguage>))
-AnnotationAssertion(rdfs:label <http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#OWLFamilyOntologyLanguage> "OWL-2  Ontology language or profile
+AnnotationAssertion(rdfs:label <http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#OWLFamilyOntologyLanguage> "OWL-2  DL Language or Profile
 "@en)
-SubClassOf(<http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#OWLFamilyOntologyLanguage> <http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#SemanticWebOntologyLanguage>)
-Declaration(Class(<http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#SemanticWebOntologyLanguage>))
-AnnotationAssertion(rdfs:label <http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#SemanticWebOntologyLanguage> "Semantic Web Ontology Language"@en)
-AnnotationAssertion(rdfs:comment <http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#SemanticWebOntologyLanguage> "An Ontology language defined by the W3C for use with the semantic web. 
-
-These languages include RDFS, and the OWL2 family of languages."@en)
-SubClassOf(<http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#SemanticWebOntologyLanguage> vocref-top:OntologyLanguage)
+SubClassOf(<http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#OWLFamilyOntologyLanguage> vocref-top:DescriptionLogic)
 Declaration(ObjectProperty(<http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#subLanguageOf>))
 TransitiveObjectProperty(<http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#subLanguageOf>)
-ObjectPropertyDomain(<http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#subLanguageOf> vocref-top:OntologyLanguage)
-ObjectPropertyRange(<http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#subLanguageOf> vocref-top:OntologyLanguage)
 Declaration(NamedIndividual(<http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#OWL2-DL>))
 AnnotationAssertion(rdfs:isDefinedBy <http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#OWL2-DL> "http://www.w3.org/TR/owl2-syntax/"^^xsd:anyURI)
 AnnotationAssertion(<http://purl.org/dc/terms/description> <http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#OWL2-DL> "A subset of OWL2-Full, defined by the OWL-2 Direct Semantics. 
@@ -60,11 +52,13 @@ For ontologies satisfying the syntactic constraints described in Section 4.2, a 
 AnnotationAssertion(rdfs:label <http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#OWL2-RL> "OWL-2 RL"@en)
 ClassAssertion(<http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#OWLFamilyOntologyLanguage> <http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#OWL2-RL>)
 ObjectPropertyAssertion(<http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#subLanguageOf> <http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#OWL2-RL> <http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#OWL2-DL>)
+Declaration(NamedIndividual(<http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#RDFS>))
+AnnotationAssertion(rdfs:label <http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#RDFS> "RDF Schema"@en)
+AnnotationAssertion(rdfs:isDefinedBy <http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#RDFS> "http://www.w3.org/TR/2014/REC-rdf-schema-20140225/"^^xsd:anyURI)
+ClassAssertion(vocref-top:VocabularyDefinitionWithInheritance <http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#RDFS>)
 AnnotationAssertion(rdfs:isDefinedBy vocref-top:OWL2 "http://www.w3.org/TR/owl2-syntax/"^^xsd:anyURI)
-AnnotationAssertion(rdfs:label vocref-top:OWL2 "OWL-2 Full"@en)
 AnnotationAssertion(<http://purl.org/dc/terms/description> vocref-top:OWL2 "The unrestricted OWL-2 language as defined by the the OWL-2 RDFS Semantics.
 "@en)
-ClassAssertion(<http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#OWLFamilyOntologyLanguage> vocref-top:OWL2)
-AnnotationAssertion(rdfs:isDefinedBy vocref-top:RDFS "http://www.w3.org/TR/2014/REC-rdf-schema-20140225/"^^xsd:anyURI)
-ClassAssertion(<http://vocref.github.io/ontologies/vocref-content/vocref-owl-profiles#SemanticWebOntologyLanguage> vocref-top:RDFS)
+AnnotationAssertion(rdfs:label vocref-top:OWL2 "OWL-2 Full"@en)
+ClassAssertion(vocref-top:LogicBasedExpressivity vocref-top:OWL2)
 )
