@@ -7,12 +7,12 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 Prefix(skos:=<http://www.w3.org/2004/02/skos/core#>)
 
 
-Ontology(<http://vocref.github.io/ontologies/vocref-top>
-<http://vocref.github.io/ontologies/vocref-top/1.0-SNAPSHOT>
-Annotation(rdfs:label "Ontology of Ontology Evaluation")
+Ontology(<http://vocref.github.io/ontologies/vocref-top/annots-to-add>
+<http://vocref.github.io/ontologies/vocref-top/>
 Annotation(owl:versionInfo "$Id$")
-Annotation(rdfs:comment "This was originally developed as part of Ontology Summit 2013 Hackathon HC-05.")
+Annotation(rdfs:label "Ontology of Ontology Evaluation")
 Annotation(rdfs:seeAlso <http://ontolog.cim3.net/cgi-bin/wiki.pl?OntologySummit2013_Hackathon_Clinics_OntologyOfOntologyEvaluation>)
+Annotation(rdfs:comment "This was originally developed as part of Ontology Summit 2013 Hackathon HC-05.")
 
 Declaration(Class(:Activity))
 AnnotationAssertion(rdfs:comment :Activity "Business Process, etc.")
