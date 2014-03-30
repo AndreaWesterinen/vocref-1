@@ -1,0 +1,28 @@
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1>
+Import(<http://vocref.github.io/ontologies/vocref-top/1.0-SNAPSHOT>)
+
+Declaration(Class(<http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1#NaturalLanguage>))
+AnnotationAssertion(rdfs:label <http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1#NaturalLanguage> "natural language"@en)
+AnnotationAssertion(rdfs:comment <http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1#NaturalLanguage> "A language currently or formerly used by people. A language developed from or for use in spoken, written, read, signed, or other communications between people, such as English, Czech, Dinka, Tagalog, or Peruvian Sign Language."@en)
+Declaration(Class(<http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1#PartOfSpeech>))
+AnnotationAssertion(rdfs:label <http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1#PartOfSpeech> "part of speech"@en)
+AnnotationAssertion(rdfs:comment <http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1#PartOfSpeech> "A part of speech is a linguistic category grouping lexical items by their behavior in a language's syntax or morphology. Examples of parts of speech include noun, verb, proper noun, and preposition."@en)
+Declaration(Class(<http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1#VONaturalLanguageFeature>))
+SubClassOf(<http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1#VONaturalLanguageFeature> <http://vocref.github.io/ontologies/vocref-top#VOCharacterization>)
+Declaration(ObjectProperty(<http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1#about>))
+ObjectPropertyDomain(<http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1#about> owl:Thing)
+ObjectPropertyRange(<http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1#about> <http://vocref.github.io/ontologies/vocref-top#SubjectArea>)
+Declaration(ObjectProperty(<http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1#hasLexicon>))
+ObjectPropertyDomain(<http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1#hasLexicon> <http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1#VONaturalLanguageFeature>)
+ObjectPropertyRange(<http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1#hasLexicon> <http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1#NaturalLanguage>)
+Declaration(ObjectProperty(<http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1#partOfSpeechClassificationSystem>))
+ObjectPropertyDomain(<http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1#partOfSpeechClassificationSystem> <http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1#VONaturalLanguageFeature>)
+ObjectPropertyRange(<http://vocref.github.io/ontologies/vocref-modules/vocref-complex-characteristics-1#partOfSpeechClassificationSystem> <http://vocref.github.io/ontologies/vocref-top#VO>)
+)
